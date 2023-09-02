@@ -30,3 +30,15 @@ body{
     background-color: chartreuse;
     border-radius: 5px;
 }
+
+.prodContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.prods{
+    border: 1px black solid;
+    width: 300px;
+    margin: 5px;
+}

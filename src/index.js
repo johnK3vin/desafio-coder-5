@@ -81,6 +81,15 @@ io.on("connection", async (socket) => {
       console.log("index:", error);
     }
   });
+
+  socket.on('pedirDatos', async ()=>{
+    const datos = await productManager.getProducts();
+    socket.emit('datos', datos)
+    console.log('datos enviados')
+  })
+
+
+
   socket.emit("listProd", listProd);
 });
 
@@ -114,6 +123,7 @@ app.get("/static/realtimeproducts", (req, res) => {
     title: "Agregar Producto",
     css: "realTimeStyle.css",
     js: "realTimeProducts.js",
+    product: listProd
   });
 });
 
